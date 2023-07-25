@@ -1,5 +1,7 @@
 # PSQL Client as Docker image
 
+[![Build and Push](https://github.com/paolodenti/psqlclient/actions/workflows/build-publish.yaml/badge.svg)](https://github.com/paolodenti/psqlclient/actions/workflows/build-publish.yaml)
+
 Postgresql client, interactive, or to run a single script or execute file content.
 
 ## Connect to db
