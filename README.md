@@ -18,7 +18,8 @@ docker run --rm \
 ```bash
 docker run --rm \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@127.0.0.1:5432/somedatabase -c "\dt;"
+  psql postgresql://ps:ps@127.0.0.1:5432/somedatabase \
+  -c "\dt;"
 ```
 
 ## Command file
@@ -31,5 +32,6 @@ EOT
 docker run --rm \
   -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@127.0.0.1:5432/somedatabase -f /commands.sql
+  psql postgresql://ps:ps@127.0.0.1:5432/somedatabase \
+  -f /commands.sql
 ```
