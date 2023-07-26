@@ -49,7 +49,7 @@ docker run --rm \
   -it \
   --network <the compose network> \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@<the compose service name>:<port>/<db name>
+  psql postgresql://<username>:<password>@<the compose service name>:<port>/<db name>
 ```
 
 ## Configure psql as a standard psql command
