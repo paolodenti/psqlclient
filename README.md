@@ -58,4 +58,6 @@ docker run --rm \
 alias psql='docker run --rm -it --network host paolodenti/psqlclient psql'
 
 psql postgresql://<username>:<password>@<host>:<port>/<db name>
+# or
+psql -h <host> -p <port> -U <username> -W -d <db name>
 ```
