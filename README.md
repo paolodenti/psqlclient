@@ -9,7 +9,6 @@ Postgresql client, interactive, or to run a single script or execute file conten
 ```bash
 docker run --rm \
   -it \
-  -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
   psql postgresql://ps:ps@127.0.0.1:5432/somedatabase
 ```
@@ -18,7 +17,6 @@ docker run --rm \
 
 ```bash
 docker run --rm \
-  -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
   psql postgresql://ps:ps@127.0.0.1:5432/somedatabase -c "\dt;"
 ```
