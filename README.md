@@ -43,7 +43,7 @@ docker run --rm \
 
 ```bash
 docker network ls
-# select the network
+# find out the compose network name
 
 docker run --rm \
   -it \
