@@ -46,7 +46,7 @@ docker run --rm -it --network <the compose network> \
   psql postgresql://<username>:<password>@<the compose service name>:<port>/<db name>
 ```
 
-## Configure psql as a standard psql command
+## Configure psqlclient as a standard psql command
 
 ```bash
 alias psql='docker run --rm -it --network host paolodenti/psqlclient psql'
