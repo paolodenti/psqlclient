@@ -15,6 +15,7 @@ docker run --rm -it --network host \
 ## Execute a sql command
 
 ```bash
+# execute \dt;
 docker run --rm --network host \
   paolodenti/psqlclient \
   psql postgresql://<username>:<password>@<host>:<port>/<db name> \
@@ -24,10 +25,12 @@ docker run --rm --network host \
 ## Execute a sql file
 
 ```bash
+# prepare a sample sql commands file
 cat <<EOT >> commands.sql
 \dt;
 EOT
 
+# execute the commands in the file
 docker run --rm --network host \
   -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
