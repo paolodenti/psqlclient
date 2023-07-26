@@ -7,9 +7,7 @@ Postgresql client, interactive, or to run a single script or execute file conten
 ## Interactive CLI
 
 ```bash
-docker run --rm \
-  -it \
-  --network host \
+docker run --rm -it --network host \
   paolodenti/psqlclient \
   psql postgresql://<username>:<password>@<host>:<port>/<db name>
 ```
@@ -17,8 +15,7 @@ docker run --rm \
 ## Execute a sql command
 
 ```bash
-docker run --rm \
-  --network host \
+docker run --rm --network host \
   paolodenti/psqlclient \
   psql postgresql://<username>:<password>@<host>:<port>/<db name> \
   -c "\dt;"
@@ -31,8 +28,7 @@ cat <<EOT >> commands.sql
 \dt;
 EOT
 
-docker run --rm \
-  --network host \
+docker run --rm --network host \
   -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
   psql postgresql://<username>:<password>@<host>:<port>/<db name> \
@@ -45,9 +41,7 @@ docker run --rm \
 docker network ls
 # find out the compose network name
 
-docker run --rm \
-  -it \
-  --network <the compose network> \
+docker run --rm -it --network <the compose network> \
   paolodenti/psqlclient \
   psql postgresql://<username>:<password>@<the compose service name>:<port>/<db name>
 ```
