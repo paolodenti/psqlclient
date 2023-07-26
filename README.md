@@ -4,7 +4,7 @@
 
 Postgresql client, interactive, or to run a single script or execute file content.
 
-## Connect to db
+## Interactive CLI
 
 ```bash
 docker run --rm \
@@ -14,7 +14,7 @@ docker run --rm \
   psql postgresql://<username>:<password>@<host>:<port>/<db name>
 ```
 
-## Single command
+## Execute a sql command
 
 ```bash
 docker run --rm \
@@ -24,7 +24,7 @@ docker run --rm \
   -c "\dt;"
 ```
 
-## Command file
+## Execute a sql file
 
 ```bash
 cat <<EOT >> commands.sql
