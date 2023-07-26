@@ -25,7 +25,7 @@ docker run --rm \
 ## Command file
 
 ```bash
-cat <<EOT >> commands.txt
+cat <<EOT >> commands.sql
 \dt;
 EOT
 
