@@ -11,7 +11,7 @@ docker run --rm \
   -it \
   --network host \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@<host>:<port>/<db name>
+  psql postgresql://<username>:<password>@<host>:<port>/<db name>
 ```
 
 ## Single command
@@ -20,7 +20,7 @@ docker run --rm \
 docker run --rm \
   --network host \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@<host>:<port>/<db name> \
+  psql postgresql://<username>:<password>@<host>:<port>/<db name> \
   -c "\dt;"
 ```
 
@@ -35,7 +35,7 @@ docker run --rm \
   --network host \
   -v $(pwd)/commands.sql:/commands.sql \
   paolodenti/psqlclient \
-  psql postgresql://ps:ps@127.0.0.1:5432/<db name> \
+  psql postgresql://<username>:<password>@<host>:<port>/<db name> \
   -f /commands.sql
 ```
 
@@ -57,5 +57,5 @@ docker run --rm \
 ```bash
 alias psql='docker run --rm -it --network host paolodenti/psqlclient psql'
 
-psql -h 127.0.0.1 -p 5432 -U ps -W -d mydb
+psql postgresql://<username>:<password>@<host>:<port>/<db name>
 ```
